@@ -6,11 +6,50 @@
     <title>Calculator</title>
 
     <style>
+        body{
+            background-color: aquamarine;
+            user-select: none;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 4px;
+            background-color: #212121;
+            padding: 4px;
+            border-radius: 7px;
+            max-width: 360px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .item{
+            background-color: #b3f5fc;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            cursor: pointer;
+            font-weight:bold;
+        }
+        form{
+            max-width: 100%;
+        }
+        input{
+            width: 100%;
+            height: 60px;
+            /* border: none; */
+            font-size: 30px;
+            outline: none;
+            text-align: right;
+        }
+        .input{
+            grid-column: 1/-1;
+            padding: 0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="item">
+        <div class="item input">
             <form name="form">
                 <input type="text" name="textView" readonly>
             </form>
