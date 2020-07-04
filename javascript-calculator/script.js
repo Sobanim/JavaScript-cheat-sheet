@@ -15,3 +15,7 @@ function equal() {
         document.getElementById("textfield").value = eval(exp);
     }
 }
+
+document.querySelector('#textfield').onkeypress = function (event) {
+    console.log('key' + event.key);
+}
