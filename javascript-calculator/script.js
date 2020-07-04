@@ -16,42 +16,51 @@ function equal() {
     }
 }
 
-document.querySelector('body').onkeypress = function (event) {
+document.querySelector('body').onkeydown = function (event) {
     console.log(event);
 
-    switch (event.code){
-        case "Digit1":
+    switch (event.keyCode){
+        case 49:
             document.getElementById("textfield").value = document.getElementById("textfield").value + 1;
             break;
-        case "Digit2":
+        case 50:
             document.getElementById("textfield").value = document.getElementById("textfield").value + 2;
             break;
-        case "Digit3":
+        case 51:
             document.getElementById("textfield").value = document.getElementById("textfield").value + 3;
             break;
-        case "Digit4":
+        case 52:
             document.getElementById("textfield").value = document.getElementById("textfield").value + 4;
             break;
-        case "Digit5":
+        case 53:
             document.getElementById("textfield").value = document.getElementById("textfield").value + 5;
             break;
-        case "Digit6":
+        case 54:
             document.getElementById("textfield").value = document.getElementById("textfield").value + 6;
             break;
-        case "Digit7":
+        case 55:
             document.getElementById("textfield").value = document.getElementById("textfield").value + 7;
             break;
-        case "Digit8":
+        case 56:
             document.getElementById("textfield").value = document.getElementById("textfield").value + 8;
             break;
-        case "Digit9":
+        case 57:
             document.getElementById("textfield").value = document.getElementById("textfield").value + 9;
             break;
-        case "Digit0":
+        case 48:
             document.getElementById("textfield").value = document.getElementById("textfield").value + 0;
             break;
-        case "Equal":
+        case 61:
             equal();
+            break;
+        case 187:
+            document.getElementById("textfield").value = document.getElementById("textfield").value + "+";
+            break;
+        case 45:
+            document.getElementById("textfield").value = document.getElementById("textfield").value + "-";
+            break;
+        case 8:
+            del();
             break;
     }
 }
