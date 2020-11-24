@@ -96,8 +96,15 @@ const person = {
    firstName: 'Dima',
    lastName: 'Sobolev',
    year: 1996,
+   hasWife: false,
    languages: ['ru', 'en', 'sk'],
    greet: function () {
       console.log(greet)
    }
 }
+console.log(person.firstName)
+console.log(person['lastName'])
+const key = 'year'
+console.log(person[key])
+person.hasWife = true
+person.isProgrammer = true
