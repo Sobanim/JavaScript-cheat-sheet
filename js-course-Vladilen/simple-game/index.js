@@ -8,6 +8,8 @@ let $gameTime = document.querySelector('#game-time')
 
 let score = 0
 let isGameStarted = false
+let name = ''
+let time = ''
 
 $start.addEventListener('click', startGame)
 $game.addEventListener('click', handleBoxClick)
@@ -40,7 +42,7 @@ function setGameScore() {
 }
 
 function setGameTime() {
-    let time = +$gameTime.value
+    time = +$gameTime.value
     $time.textContent = time.toFixed(1)
     show($timeHeader)
     hide($resultHeader)
@@ -51,6 +53,7 @@ function endGame() {
     setGameScore()
     $gameTime.removeAttribute('disabled')
     show($start)
+    addDataToTable()
     $game.innerHTML = ''
     $game.style.backgroundColor = '#ccc'
     hide($timeHeader)
@@ -79,7 +82,6 @@ function renderBox() {
     box.style.position = 'absolute'
     box.style.top = getRandom(0, maxTop) + 'px'
     box.style.left = getRandom(0, maxLeft) + 'px'
-    // box.style.backgroundColor = 'black'
     box.style.cursor = 'pointer'
     box.style.backgroundColor = `rgb(${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()})`
     box.setAttribute('data-box', 'true')
@@ -103,3 +105,46 @@ function getRandomColor() {
     let color = Math.floor(Math.random() * (255 - 0) + 0)
     return color
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    name = prompt('What is your name?')
+    console.log(name)
+})
+
+function addDataToTable() {
+
+
+    let table = document.querySelector('table')
+    let row = table.insertRow(1)
+    let cell1 = row.insertCell(0)
+    let cell2 = row.insertCell(1)
+    let cell3 = row.insertCell(2)
+    cell1.innerHTML = name
+    cell2.innerHTML = time
+    cell3.innerHTML = score
+
+
+
+
+    // let tr = document.createElement('tr')
+    // let nameTable = document.createElement('td')
+    // let timeGameTable = document.createElement('td')
+    // let scoreTable = document.createElement('td')
+    // nameTable.value = name
+    // timeGameTable.value = 5
+    // scoreTable.value = score
+    // tr.insertAdjacentElement('afterbegin', nameTable)
+    // tr.insertAdjacentElement('afterbegin', timeGameTable)
+    // tr.insertAdjacentElement('afterbegin', scoreTable)
+    // table.insertAdjacentElement('afterbegin', tr)
+
+}
+
+// function myCreateFunction() {
+//     var table = document.getElementById("myTable");
+//     var row = table.insertRow(0);
+//     var cell1 = row.insertCell(0);
+//     var cell2 = row.insertCell(1);
+//     cell1.innerHTML = "NEW CELL1";
+//     cell2.innerHTML = "NEW CELL2";
+// }
