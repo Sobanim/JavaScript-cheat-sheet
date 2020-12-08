@@ -6,8 +6,6 @@ let $resultHeader = document.querySelector('#result-header')
 let $result = document.querySelector('#result')
 let $gameTime = document.querySelector('#game-time')
 
-
-
 let score = 0
 let isGameStarted = false
 
@@ -81,8 +79,9 @@ function renderBox() {
     box.style.position = 'absolute'
     box.style.top = getRandom(0, maxTop) + 'px'
     box.style.left = getRandom(0, maxLeft) + 'px'
-    box.style.backgroundColor = 'black'
+    // box.style.backgroundColor = 'black'
     box.style.cursor = 'pointer'
+    box.style.backgroundColor = `rgb(${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()})`
     box.setAttribute('data-box', 'true')
 
     $game.insertAdjacentElement('afterbegin', box)
@@ -98,4 +97,9 @@ function show($el) {
 
 function hide($el) {
     $el.classList.add('hide')
+}
+
+function getRandomColor() {
+    let color = Math.floor(Math.random() * (255 - 0) + 0)
+    return color
 }
