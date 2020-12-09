@@ -73,7 +73,7 @@ function handleBoxClick(event) {
 function renderBox() {
     $game.innerHTML = ''
     let box = document.createElement('div')
-    let boxSize = getRandom(20, 100)
+    let boxSize = getRandom(20, 80)
     let gameSize = $game.getBoundingClientRect()
     let maxTop = gameSize.height - boxSize
     let maxLeft = gameSize.width - boxSize
@@ -108,22 +108,22 @@ function getRandomColor() {
 
 document.addEventListener('DOMContentLoaded', function () {
     do{
-        while (name === null){
+        do {
             name = prompt('What is your name?', 'Guest')
             if (name === null){
                 alert('Please write YOUR name')
+            } else  if (name.length >= 20) {
+                alert('Your name os tooo long. Please write shorter name')
+            }else if(name.length <= 2){
+                alert('Your name is too shorter. Please write long name')
+            }
+            else{
+                break
             }
         }
-        if (name.length >= 10) {
-            alert('Your name os tooo long. Please write shorter name')
-        }else if(name.length <= 2){
-            alert('Your name is too shorter. Please write long name')
-        }
-        else{
-            break
-        }
+        while (name === null)
     }
-    while (name.length >= 10 || name.length <= 2)
+    while (name.length >= 20 || name.length <= 2)
 })
 
 function addDataToTable() {
@@ -140,7 +140,7 @@ function addDataToTable() {
     let tBody = table.querySelector('tbody')
     let numberLines = tBody.querySelectorAll('tr').length - 1
     console.log(numberLines)
-    if (numberLines === 5){
-        table.deleteRow(5)
+    if (numberLines === 10){
+        table.deleteRow(10)
     }
 }
