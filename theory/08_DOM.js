@@ -13,7 +13,7 @@ const heading3 = h2List[h2List.length - 1]
 
 setTimeout(() => {
     addStylesTo(heading, 'JavaScript', 'green')
-}, 1000)
+}, 1000) 
 
 setTimeout(() => {
     addStylesTo(heading2, 'И всё получиться!', 'blue', '2rem')
