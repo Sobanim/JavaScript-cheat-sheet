@@ -1,0 +1,5 @@
+Реализуйте класс Dropdown, который будет инициализировать компонет выбора элементов по функционалу похожий на обычный HTML
+элемент select, но полностью реализованный вашим кодом бех select тега
+
+Implement a Dropdown class that will initialize the element selector in functionality similar to a normal HTML
+select element, but fully implemented by your code without the select tag
